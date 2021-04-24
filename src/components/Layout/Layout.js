@@ -15,7 +15,7 @@ export default Layout;
 
 const Container = styled.main`
   height: 100vh;
-  background-color: gray;
+
   display: flex;
   justify-content: center;
   align-items: center;
