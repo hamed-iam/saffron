@@ -2,9 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Welcome to my Saffron Project
 
-In the project directory, you can run:
+This is a showcase project meant for client representation, and has a lot of bells and whistles.
+Feel free to expand and use it.
+The structure of this project is scalable and expandable.
 
 ### `yarn start`
 
