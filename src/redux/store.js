@@ -2,21 +2,35 @@ import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './rootReducer';
 
-const localStorageKey = 'theme';
-const persistedTheme = localStorage.getItem(localStorageKey);
-
-let initialState = {
-  preferences: persistedTheme ? JSON.parse(persistedTheme) : {},
+const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem('state');
+    if (serializedState === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    return undefined;
+  }
 };
 
-const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
+const saveState = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('state', serializedState);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const persistedState = loadState();
+
+const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
 
 store.subscribe(() => {
-  const preferences = store.getState().preferences;
-
-  if (!preferences) return;
-
-  localStorage.setItem(localStorageKey, JSON.stringify(preferences));
+  saveState({
+    theme: store.getState().theme,
+  });
 });
 
 export default store;
