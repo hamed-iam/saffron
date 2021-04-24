@@ -38,8 +38,8 @@ const Container = styled.main`
   bottom: 1rem;
 
   width: 90%;
-  border-top: 1px solid whitesmoke;
-  border-bottom: 1px solid whitesmoke;
+  border-top: 3px solid whitesmoke;
+  border-bottom: 3px solid whitesmoke;
   display: flex;
   justify-content: space-between;
   align-items: center;
