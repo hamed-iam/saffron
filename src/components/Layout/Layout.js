@@ -33,7 +33,7 @@ const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-direction: column;
   background-color: ${backgroundColor};
   color: ${textColor};
   transition: 0.5s ease-in-out;

@@ -4,7 +4,7 @@ import Switch from '@material-ui/core/Switch';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleDarkTheme } from '../redux/theme/themeActions';
 import { Button } from '@material-ui/core';
-import logo from '../saffron.png';
+import logo from '../safff.png';
 
 const Header = () => {
   const darkThemeEnabled = useSelector((state) => state.theme.darkThemeEnabled);
