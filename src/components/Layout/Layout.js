@@ -36,4 +36,5 @@ const Container = styled.main`
 
   background-color: ${backgroundColor};
   color: ${textColor};
+  transition: 0.5s ease-in-out;
 `;

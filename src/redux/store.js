@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './rootReducer';
-
+import throttle from 'lodash.throttle';
 const loadState = () => {
   try {
     const serializedState = localStorage.getItem('state');
@@ -27,10 +27,12 @@ const persistedState = loadState();
 
 const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
 
-store.subscribe(() => {
-  saveState({
-    theme: store.getState().theme,
-  });
-});
+store.subscribe(
+  throttle(() => {
+    saveState({
+      theme: store.getState().theme,
+    });
+  }, 1000)
+);
 
 export default store;

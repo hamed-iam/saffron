@@ -7,9 +7,6 @@ import {
 const Footer = () => {
   return (
     <Container>
-      <Name>
-        <h4>Hamed Ghazali © {new Date().getFullYear()}</h4>
-      </Name>
       <Links>
         <a
           href="https://www.instagram.com/hamed_iam/"
@@ -29,6 +26,9 @@ const Footer = () => {
           <AiFillLinkedin />
         </a>
       </Links>
+      <Name>
+        <h4>حامد غزالی © {new Date().getFullYear()}</h4>
+      </Name>
     </Container>
   );
 };
@@ -36,17 +36,17 @@ const Footer = () => {
 const Container = styled.main`
   position: absolute;
   bottom: 1rem;
-
+  height: 2rem;
   width: 90%;
   border-top: 3px solid whitesmoke;
   border-bottom: 3px solid whitesmoke;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  :hover {
+  /* :hover {
     background-color: whitesmoke;
     transition: 0.2s ease-in-out;
-  }
+  } */
 `;
 
 const Name = styled.div`
@@ -58,14 +58,16 @@ const Name = styled.div`
 
 const Links = styled.div`
   display: flex;
-  padding: 0 0.8rem 0 0.8rem;
-  align-items: center;
+
   a {
-    padding: 0 0.5rem 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     list-style: none;
     color: inherit;
     font-size: 1.5rem;
+    padding-left: 0.8rem;
   }
 `;
 
