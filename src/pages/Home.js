@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+
 import { connect } from 'react-redux';
 import Layout from '../components/Layout/Layout';
 import { fetchCur } from '../redux/arz/arzActions';
-
+import { MagicSpinner } from 'react-spinners-kit';
+import SanaArz from '../components/SanaArz';
 const Home = ({ arzData, fetchCur }) => {
   console.log(arzData, fetchCur);
 
@@ -16,20 +18,13 @@ const Home = ({ arzData, fetchCur }) => {
 
   return (
     <Layout>
-      {arzData.loading && <h2>Loading</h2>}
+      {arzData.loading && <MagicSpinner size={70} color="red" />}
       {arzData.error && <h2>OOppss, try again later</h2>}
 
       {arzData.currency && (
         <div>
           {arzData.currency.slice(0, 15).map((data) => {
-            const { title, p, t, updated_at } = data;
-            return (
-              <ul>
-                <li>
-                  {title} - {p}
-                </li>
-              </ul>
-            );
+            return <SanaArz data={data} />;
           })}
         </div>
       )}
