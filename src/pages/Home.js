@@ -19,11 +19,21 @@ const Home = ({ arzData, fetchCur }) => {
 
   return (
     <Layout>
-      <Button variant="contained" onClick={() => setToggle(!toggle)}>
-        Buy/Sell
-      </Button>
+      {arzData.currency && !arzData.error && (
+        <Button
+          variant="contained"
+          onClick={() => setToggle(!toggle)}
+          style={{ marginTop: '15px' }}
+        >
+          Buy/Sell
+        </Button>
+      )}
 
-      {arzData.error && <h2>OOppss, try again later</h2>}
+      {arzData.error && (
+        <ErrorContainer>
+          <h4>اوپسی دوپسی... یا اینترنت نداری یا سنا کار کار نمیکنه </h4>
+        </ErrorContainer>
+      )}
 
       {arzData.loading ? (
         <MagicSpinner size={70} color="red" />
@@ -56,12 +66,19 @@ const Home = ({ arzData, fetchCur }) => {
 };
 
 const Container = styled.main`
-  height: 78%;
+  height: 65%;
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const ErrorContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
 `;
 
 const mapStateToProps = (state) => {
