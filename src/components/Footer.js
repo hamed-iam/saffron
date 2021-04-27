@@ -34,9 +34,10 @@ const Footer = () => {
 };
 
 const Container = styled.main`
-  position: absolute;
+  overflow: hidden;
   bottom: 1rem;
   height: 2rem;
+  margin-bottom: 1rem;
   width: 90%;
   border-top: 3px solid whitesmoke;
   border-bottom: 3px solid whitesmoke;

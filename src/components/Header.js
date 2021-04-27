@@ -18,16 +18,16 @@ const Header = () => {
           inputProps={{ 'aria-label': 'primary checkbox' }}
           className="switch"
         />
-        <Button color="inherit">
-          <Link to="/">خانه</Link>
-        </Button>
+        <Link to="/">
+          <Button color="inherit">ارز</Button>
+        </Link>
 
-        <Button color="inherit">
-          <Link to="/about">درباره</Link>
-        </Button>
-        <Button color="inherit">
-          <Link to="/contact">تماس</Link>
-        </Button>
+        <Link to="/about">
+          <Button color="inherit">کریپتو</Button>
+        </Link>
+        <Link to="/contact">
+          <Button color="inherit">تماس</Button>
+        </Link>
       </Links>
       <Logo>
         <img src={logo} alt="saffron" />
@@ -37,11 +37,12 @@ const Header = () => {
 };
 
 const Container = styled.main`
-  position: absolute;
-  top: 1rem;
-
+  position: relative;
+  top: 0;
+  overflow: hidden;
   width: 90%;
   display: flex;
+  margin-top: 1rem;
   justify-content: space-between;
   align-items: center;
   border-top: 3px solid whitesmoke;
@@ -69,8 +70,8 @@ const Links = styled.div`
     text-decoration: none;
     color: inherit;
     font-weight: bold;
-    font-size: 1.1rem;
-    padding-left: 0.5rem;
+    font-size: 0.1rem;
+    padding-left: 0.1rem;
   }
 `;
 export default Header;

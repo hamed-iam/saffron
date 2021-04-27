@@ -16,25 +16,27 @@ export const textColor = theme('theme', {
 const Layout = ({ children }) => {
   return (
     <DarkThemeProvider>
-      <Container>
+      <ParentContainer>
         <Header />
-        {children}
+        <Container>{children}</Container>
         <Footer />
-      </Container>
+      </ParentContainer>
     </DarkThemeProvider>
   );
 };
 
 export default Layout;
 
-const Container = styled.main`
+const ParentContainer = styled.main`
   min-height: 100vh;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   background-color: ${backgroundColor};
   color: ${textColor};
   transition: 0.5s ease-in-out;
 `;
+
+const Container = styled.section``;

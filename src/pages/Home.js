@@ -5,7 +5,7 @@ import Layout from '../components/Layout/Layout';
 import { fetchCur } from '../redux/arz/arzActions';
 import { MagicSpinner } from 'react-spinners-kit';
 import SanaArz from '../components/SanaArz';
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 const Home = ({ arzData, fetchCur }) => {
   const [toggle, setToggle] = useState(true);
 
@@ -53,9 +53,9 @@ const Home = ({ arzData, fetchCur }) => {
           <Container>
             {arzData.currency.slice(16, 31).map((data, i) => {
               return (
-                <React.Fragment key={i}>
+                <Grid container spacing={2} justify="center" key={i}>
                   <SanaArz data={data} />
-                </React.Fragment>
+                </Grid>
               );
             })}
           </Container>
@@ -66,12 +66,13 @@ const Home = ({ arzData, fetchCur }) => {
 };
 
 const Container = styled.main`
-  height: 65%;
-  width: 80%;
-  display: flex;
+  /* height: 65%;
+  width: 100%; */
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  padding: 1rem;
 `;
 
 const ErrorContainer = styled.div`
