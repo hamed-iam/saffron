@@ -23,7 +23,7 @@ const Home = ({ arzData, fetchCur }) => {
         <Button
           variant="contained"
           onClick={() => setToggle(!toggle)}
-          style={{ marginTop: '15px' }}
+          style={{ marginTop: '15px', width: '5rem' }}
         >
           Buy/Sell
         </Button>
@@ -41,9 +41,9 @@ const Home = ({ arzData, fetchCur }) => {
         <Container>
           {arzData.currency.slice(0, 15).map((data, i) => {
             return (
-              <React.Fragment key={i}>
+              <Content key={i}>
                 <SanaArz data={data} />
-              </React.Fragment>
+              </Content>
             );
           })}
         </Container>
@@ -53,9 +53,9 @@ const Home = ({ arzData, fetchCur }) => {
           <Container>
             {arzData.currency.slice(16, 31).map((data, i) => {
               return (
-                <Grid container spacing={2} justify="center" key={i}>
+                <Content key={i}>
                   <SanaArz data={data} />
-                </Grid>
+                </Content>
               );
             })}
           </Container>
@@ -74,7 +74,9 @@ const Container = styled.main`
   align-items: center; */
   padding: 1rem;
 `;
-
+const Content = styled.section`
+  width: 100%;
+`;
 const ErrorContainer = styled.div`
   position: absolute;
   top: 50%;

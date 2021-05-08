@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleDarkTheme } from '../redux/theme/themeActions';
 import { Button } from '@material-ui/core';
 import logo from '../safff.png';
+import { RiMoneyPoundCircleFill } from 'react-icons/ri';
+import { FaBitcoin } from 'react-icons/fa';
 
 const Header = () => {
   const darkThemeEnabled = useSelector((state) => state.theme.darkThemeEnabled);
@@ -19,11 +21,15 @@ const Header = () => {
           className="switch"
         />
         <Link to="/">
-          <Button color="inherit">ارز</Button>
+          <Button color="inherit">
+            <RiMoneyPoundCircleFill className="link-icon" />
+          </Button>
         </Link>
 
         <Link to="/about">
-          <Button color="inherit">کریپتو</Button>
+          <Button color="inherit">
+            <FaBitcoin className="link-icon" />
+          </Button>
         </Link>
         <Link to="/contact">
           <Button color="inherit">تماس</Button>
@@ -70,8 +76,11 @@ const Links = styled.div`
     text-decoration: none;
     color: inherit;
     font-weight: bold;
-    font-size: 0.1rem;
+    font-size: 0.5rem;
     padding-left: 0.1rem;
+  }
+  .link-icon {
+    font-size: 2rem;
   }
 `;
 export default Header;

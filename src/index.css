@@ -11,19 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-@font-face {
-  font-family: Samim;
-  src: url('./fonts/samim-font-v2.0.1//Samim-Bold.eot');
-  src: url('./fonts/samim-font-v2.0.1/Samim-Bold.eot') format('Tanha-opentype'),
-    url('./fonts/samim-font-v2.0.1/Samim.woff') format('woff'),
-    url('./fonts/samim-font-v2.0.1/Samim-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-* {
-  font-family: Samim, sans-serif !important;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}

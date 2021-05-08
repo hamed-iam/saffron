@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import theme from 'styled-theming';
 import DarkThemeProvider from '../DarkThemeProvider';
 export const backgroundColor = theme('theme', {
-  light: '#fff',
+  light: '#fbfbf8',
   dark: '#2d2d2d',
 });
 
 export const textColor = theme('theme', {
   light: '#000',
-  dark: '#fff',
+  dark: '#fbfbf8',
 });
 
 const Layout = ({ children }) => {
@@ -39,4 +39,6 @@ const ParentContainer = styled.main`
   transition: 0.5s ease-in-out;
 `;
 
-const Container = styled.section``;
+const Container = styled.section`
+  width: 85%;
+`;
