@@ -7,6 +7,7 @@ import { Button } from '@material-ui/core';
 import logo from '../safff.png';
 import { RiMoneyPoundCircleFill } from 'react-icons/ri';
 import { FaBitcoin } from 'react-icons/fa';
+import { AiFillPhone } from 'react-icons/ai';
 
 const Header = () => {
   const darkThemeEnabled = useSelector((state) => state.theme.darkThemeEnabled);
@@ -26,13 +27,15 @@ const Header = () => {
           </Button>
         </Link>
 
-        <Link to="/about">
+        <Link to="/crypto">
           <Button color="inherit">
             <FaBitcoin className="link-icon" />
           </Button>
         </Link>
         <Link to="/contact">
-          <Button color="inherit">تماس</Button>
+          <Button color="inherit">
+            <AiFillPhone className="link-icon" />
+          </Button>
         </Link>
       </Links>
       <Logo>

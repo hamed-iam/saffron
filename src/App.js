@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import About from './pages/About';
+import CryptoPage from './pages/Crypto';
 import Contact from './pages/Contact';
 import NoMatch from './pages/NoMatch';
 import { ThemeProvider } from 'styled-components';
@@ -17,8 +17,8 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/about">
-              <About />
+            <Route exact path="/crypto">
+              <CryptoPage />
             </Route>
 
             <Route exact path="/contact">

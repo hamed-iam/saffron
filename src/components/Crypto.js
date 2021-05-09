@@ -5,6 +5,7 @@ import {
   makeStyles,
   Typography,
 } from '@material-ui/core';
+import CountUp from 'react-countup';
 import styled from 'styled-components';
 
 const Crypto = ({ item: { name, price_usd, symbol } }) => {
@@ -17,7 +18,7 @@ const Crypto = ({ item: { name, price_usd, symbol } }) => {
         <Typography>{symbol}</Typography>
       </div>
       <div className="ctx">
-        <Typography>$ {price_usd}</Typography>
+        <Typography>${price_usd}</Typography>
       </div>
     </Container>
   );
@@ -28,7 +29,7 @@ const Container = styled.main`
   border: 2px solid whitesmoke;
   border-radius: 20px;
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: 0.1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

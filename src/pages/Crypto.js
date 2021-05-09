@@ -4,8 +4,9 @@ import Layout from '../components/Layout/Layout';
 import { fetchCrypto } from '../redux/crypto/cryptoAction';
 import styled from 'styled-components';
 import Crypto from '../components/Crypto';
+import { MagicSpinner } from 'react-spinners-kit';
 
-const About = ({ cryptoData, fetchCrypto }) => {
+const CryptoPage = ({ cryptoData, fetchCrypto }) => {
   useEffect(() => {
     fetchCrypto();
   }, [fetchCrypto]);
@@ -14,7 +15,7 @@ const About = ({ cryptoData, fetchCrypto }) => {
     <Layout>
       <Container>
         {cryptoData.loading ? (
-          <h2>loading...</h2>
+          <MagicSpinner size={70} color="red" />
         ) : cryptoData.error ? (
           <h2>{cryptoData.error}</h2>
         ) : (
@@ -31,7 +32,12 @@ const About = ({ cryptoData, fetchCrypto }) => {
 
 const Container = styled.main`
   overflow: hidden;
-  padding: 5rem;
+  padding: 2rem;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const mapStateToProps = (state) => {
@@ -46,4 +52,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(About);
+export default connect(mapStateToProps, mapDispatchToProps)(CryptoPage);

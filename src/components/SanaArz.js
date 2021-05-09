@@ -4,20 +4,22 @@ import styled from 'styled-components';
 const SanaArz = ({ data: { title, p, updated_at, t } }) => {
   return (
     <Section>
-      <div className="ctx">{title}</div>
       <div className="ctx">
+        <p>{title}</p>
+      </div>
+      <div className="ctx price">
         <CountUp start={0} end={p} duration={1} separator="," />
       </div>
-      <div className="ctx">{updated_at}</div>
+      <div className="ctx active">{updated_at}</div>
       <div className="ctx-t"> {t}</div>
     </Section>
   );
 };
 
 const Section = styled.div`
-  padding: 1rem;
-  border-radius: 15px;
-  border: 3px solid whitesmoke;
+  padding: 0.3rem;
+  border-radius: 20px;
+  border: 2px solid whitesmoke;
   margin: 0.2rem;
   display: flex;
   justify-content: space-between;
@@ -32,6 +34,14 @@ const Section = styled.div`
     display: flex;
     justify-content: flex-end;
     width: 25%;
+  }
+  .price {
+    padding-left: 0.5rem;
+  }
+  @media screen and (max-width: 620px) {
+    .active {
+      display: none;
+    }
   }
 `;
 export default SanaArz;

@@ -41,4 +41,8 @@ const ParentContainer = styled.main`
 
 const Container = styled.section`
   width: 85%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  /* flex-direction: column; */
 `;
